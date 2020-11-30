@@ -25,5 +25,5 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Maven Release and Publish
-      uses: mg-smartrent/github-actions-maven-release@v1.5
+      uses: mvn deploy
 
