@@ -24,8 +24,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Maven Release and Publish
-      run: mvn -B -e -X clean deploy -DskipTests
+    - name: Deploy to Github Package Registry
       env:
+        GITHUB_USERNAME: x-access-token
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run:
+        mvn --settings settings.xml deploy
+
 
