@@ -25,5 +25,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Maven Release and Publish
-      uses: mvn deploy
+      run: mvn -B -e -X clean deploy -DskipTests
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
