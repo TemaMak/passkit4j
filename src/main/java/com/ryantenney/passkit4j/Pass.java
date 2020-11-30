@@ -88,6 +88,8 @@ public class Pass {
 	// NFC Keys
 	private NFC nfc;
 
+	private boolean sharingProhibited = false;
+
 
 	@JsonIgnore private PassInformation passInformation;
 	@JsonIgnore private List<NamedInputStreamSupplier> files;
@@ -195,5 +197,4 @@ public class Pass {
 		this.expirationDate = ISO8601Utils.parse(iso8601dateString);
 		return this;
 	}
-
 }
